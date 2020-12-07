@@ -1,3 +1,4 @@
+# omok_201721070
 
 def getWinner(board):
     totalCountB = 0
@@ -11,18 +12,18 @@ def getWinner(board):
             if board[i][j] == "B":
                 curColor = "B"
                 totalCountB += 1
-                #돌 주변으로 이어져있나 체크
+                # 돌 주변으로 이어져있나 체크
                 if checkNear(board, curColor, curPosition):
                     winB = True
             elif board[i][j] == "W":
                 curColor = "W"
                 totalCountW += 1
-                #돌 주변으로 이어져있나 체크
+                # 돌 주변으로 이어져있나 체크
                 if checkNear(board, curColor, curPosition):
                     winW = True
 
     # 예외조건 확인 및 승자 체크
-    if (winB and winW) or totalCountW > totalCountB or totalCountW+2 <= totalCountB:
+    if (winB and winW) or totalCountW > totalCountB or totalCountW + 2 <= totalCountB:
         return 'X'
     elif winB:
         return 'B'
